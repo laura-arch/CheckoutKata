@@ -5,8 +5,20 @@ function checkout(array) {
 
   for (const item of array) {
     console.log(item);
-    // checking I can iterate over an array
+    switch (item) {
+      case "A":
+        A++;
+        break;
+      case "B":
+        B++;
+        break;
+      case "C":
+        C++;
+        break;
+    }
   }
+  console.log(A, B, C);
+  //   checking I can add the total of each type
 }
 
 checkout(["A", "B"]);
