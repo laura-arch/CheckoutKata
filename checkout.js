@@ -6,7 +6,6 @@ function checkout(array) {
 
   //   Sums total of each type of product:
   for (const item of array) {
-    console.log(item);
     switch (item) {
       case "A":
         A++;
@@ -20,24 +19,22 @@ function checkout(array) {
     }
   }
 
-  if (Math.floor(B / 2) > 0) {
-    cost += 1.25 * Math.floor(B / 2);
-    //   charging for the deals
-    B -= 2 * Math.floor(B / 2);
-    //   removing those we've already charged for
-  }
+  //   Adding total for A
+  cost += 0.5 * A;
 
-  if (Math.floor(C / 4) > 0) {
-    cost += 0.75 * Math.floor(C / 4);
-    //   charging for the deals
-    C -= 4 * Math.floor(C / 4);
-    // removing those we've already charged for
-  }
+  //   Adding discounted B
+  cost += 1.25 * Math.floor(B / 2);
 
-  return cost + 0.5 * A + 0.75 * B + 0.25 * C;
-  //   checking we can sum the total without the discounts implemented
+  //   Adding full price B
+  cost += 0.75 * (B % 2);
+
+  //   Adding discounted C
+  cost += 0.75 * Math.floor(C / 4);
+
+  //   Adding full price C
+  cost += 0.25 * (C % 4);
+
+  return cost;
 }
-
-checkout(["A", "B"]);
 
 module.exports = checkout;
