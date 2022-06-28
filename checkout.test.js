@@ -14,8 +14,6 @@ test("With both discounts", () => {
   expect(checkout(["B", "B", "C", "C", "C", "C"])).toBe(2.0);
 });
 
-// Note: currently not working because function checkout doesn't exist yet
-
 // Test case 1 (no discount): ['C', ‘C', 'C'] => 0.75
 // Test case 2 (no discount): ['A', ‘A', 'C'] => 1.25
 // Test case 3 (2 for 1.25 discount applied): ['B', ‘B', 'B'] => 2.00
