@@ -17,8 +17,8 @@ function checkout(array) {
         break;
     }
   }
-  console.log(A, B, C);
-  //   checking I can add the total of each type
+  return 0.5 * A + 0.75 * B + 0.25 * C;
+  //   checking we can sum the total without the discounts implemented
 }
 
 checkout(["A", "B"]);
